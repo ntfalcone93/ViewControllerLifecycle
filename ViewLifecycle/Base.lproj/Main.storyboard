@@ -27,9 +27,12 @@
                                     <constraint firstAttribute="height" constant="100" id="aps-VD-hzd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="NEXT">
+                                <state key="normal" title="Tap">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="TLI-nd-SM9" kind="presentation" identifier="toSecondVC" id="ADJ-Uw-cjl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,6 +49,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-638" y="109"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="flL-Mt-SFg">
+            <objects>
+                <viewController id="TLI-nd-SM9" customClass="SecondViewController" customModule="ViewLifecycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J5O-YY-wIQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAf-xN-dU1">
+                                <rect key="frame" x="137" y="283" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="hvR-3Y-YhF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Tap">
+                                    <color key="titleColor" red="0.25935962800000001" green="0.58063071970000002" blue="0.96870678659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="TLI-nd-SM9" eventType="touchUpInside" id="VK9-bF-LQP"/>
+                                    <action selector="whiteButton:" destination="V21-a9-lRX" eventType="touchUpInside" id="boN-7V-wgZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hAf-xN-dU1" firstAttribute="centerX" secondItem="J5O-YY-wIQ" secondAttribute="centerX" id="GDB-qz-P45"/>
+                            <constraint firstItem="hAf-xN-dU1" firstAttribute="centerY" secondItem="J5O-YY-wIQ" secondAttribute="centerY" id="Tca-sp-Hou"/>
+                            <constraint firstItem="hAf-xN-dU1" firstAttribute="width" secondItem="hAf-xN-dU1" secondAttribute="height" multiplier="1:1" id="vZf-QB-3PZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ipd-6K-C6w"/>
+                    </view>
+                    <connections>
+                        <outlet property="whiteButton" destination="hAf-xN-dU1" id="MYg-1q-5yd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EB7-u2-HNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="V21-a9-lRX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="108"/>
         </scene>
     </scenes>
 </document>
