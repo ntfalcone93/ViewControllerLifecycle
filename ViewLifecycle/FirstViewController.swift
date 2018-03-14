@@ -55,7 +55,7 @@ class FirstViewController: UIViewController {
     func designButton() {
         // Make the button a circle
         blueButton.layer.cornerRadius = blueButton.frame.height / 2
-        // Give the button a shadow to make it seem like its floating off the screen
+        // Give the button a shadow to make it seem like its floating on top of the screen
         blueButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         blueButton.layer.shadowColor = UIColor.black.cgColor
         blueButton.layer.shadowRadius = 4
@@ -68,7 +68,7 @@ class FirstViewController: UIViewController {
     /// Changes the backgroundColor of the view
     func changeBackgroundColor() {
         let backgroundColors: [UIColor] = [.yellow, .red, .purple, .white]
-        // Ensure that colorIndex never exceeds the amount of colors in backgroundColors
+        // Reset the colorIndex when it reaches the end of the backgroundColors array
         if colorIndex == backgroundColors.count {
             colorIndex = 0
         }
@@ -83,9 +83,11 @@ class FirstViewController: UIViewController {
     
     /// Makes the blueButton grow and then shrink back to its original size
     func makeButtonPop() {
+        // Animate the blueButton growing to 1 1/4 its size
         UIView.animate(withDuration: 0.25, delay: 0.5, options: [.curveEaseIn, .allowUserInteraction], animations: {
             self.blueButton.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
         }) { (_) in
+            // Animate the blueButton shrinking back to its original size
             UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseOut, animations: {
                 self.blueButton.transform = .identity
             }, completion: nil)
@@ -94,9 +96,10 @@ class FirstViewController: UIViewController {
     
     /// Animates the blueButton onto the screen from above the view
     func animateButtonOnScreen() {
+        // Set the blueButton's y position above the view
         let yPosition = -(view.frame.height / 2) - (blueButton.frame.height)
         self.blueButton.transform = CGAffineTransform(translationX: 0, y: yPosition)
-        
+        // Animate the blueButton moving back to its orginal y position
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
             self.blueButton.transform = CGAffineTransform.identity
         }, completion: nil)
@@ -104,7 +107,9 @@ class FirstViewController: UIViewController {
     
     /// Animates the blueButton moving up and off the screen
     func animateButtonOffScreen() {
+        // Set the transform to above the top of the view
         let transform = CGAffineTransform(translationX: 0, y: -(view.frame.height / 2) - (blueButton.frame.height))
+        // Animate the blueButton moving up to the transform above
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
             self.blueButton.transform = transform
         }, completion: nil)
