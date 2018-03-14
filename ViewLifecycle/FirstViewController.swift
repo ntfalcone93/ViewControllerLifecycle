@@ -8,6 +8,8 @@
 
 import UIKit
 
+// TODO: Recreate the app shown in the Example.mp4 by matching each method below with its corresponding lifecycle method
+
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var blueButton: UIButton!
