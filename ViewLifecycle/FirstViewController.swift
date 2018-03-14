@@ -8,6 +8,8 @@
 
 import UIKit
 
+// TODO: Make 5 methods that you believe would be appropriate to call in each one of the ViewController's lifecycle methods
+
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var blueButton: UIButton!
