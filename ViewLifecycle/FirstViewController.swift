@@ -18,35 +18,30 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        designButton()
     }
     
     // Gets called when the view is about to appear on the screen
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        animateButtonOnScreen()
     }
     
     // Gets called when the view does appear on the screen
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        makeButtonPop()
     }
     
     // Gets called when the view is about to be removed from the screen
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        animateButtonOffScreen()
     }
     
     // Gets called when the view is removed from the screen
     override func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        changeBackgroundColor()
     }
 
     // MARK: View setup methods
